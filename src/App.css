@@ -33,6 +33,12 @@ button {
   text-shadow: rgb(255, 255, 255) 0px 0px 10px;
 }
 
+button:hover {
+  cursor: pointer;
+  color: greenyellow;
+  text-shadow: rgb(0, 15, 128) 0px 0px 10px;
+}
+
 @keyframes rainbow{
   100%,0%{
       background-color: rgba(117, 0, 0, 0.5);
