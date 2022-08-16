@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
+import Content from "./components/content";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+export default function App() {
+  const [errorMsg, setErrorMsg] = useState('')
+  const [anime, setAnime] = useState([])
+
+  useEffect (() => {
+    const fetchData = async () => {
+      
+      try {
+        setErrorMsg('')
+        const response = await fetch('https://anime-facts-rest-api.herokuapp.com/api/v1');
+        if(!response.ok){
+          throw new Error(response.statusText)
+        }
+        const data = await response.json();
+        console.log(response)
+        console.log(data)
+        setAnime(data.data)
+      } catch (error) {
+        setErrorMsg("Oops, something went wrong...")
+        console.log(error.message)
+      }
+    }
+    fetchData()
+  },[]);
+  return (
+    <Content errorMsg={errorMsg} anime={anime} />
+  )
+}

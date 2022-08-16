@@ -1,38 +1,73 @@
-.App {
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('/images/background.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: rgb(0, 0, 0);
+  text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+  font-size: 3em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container {
+  background-color: rgba(0, 255, 255, 0.653);
+  padding: 0.5em;
+  border-radius: 1em;
+  animation: rainbow 20s infinite;
+}
+
+button {
+  width: 100%;
+  padding: 0.25em;
+  border: none;
+  font-weight: bolder;
+  background: none;
+  font-size: 1.5em;
+  text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+}
+
+@keyframes rainbow{
+  100%,0%{
+      background-color: rgba(117, 0, 0, 0.5);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  8%{
+      background-color: rgba(106, 53, 1, 0.5);
   }
-  to {
-    transform: rotate(360deg);
+  16%{
+      background-color: rgba(94, 94, 1, 0.5);
+  }
+  25%{
+      background-color: rgba(50, 99, 0, 0.5);
+  }
+  33%{
+      background-color: rgba(0, 96, 0, 0.5);
+  }
+  41%{
+      background-color: rgba(0, 89, 45, 0.5);
+  }
+  50%{
+      background-color: rgba(0, 90, 90, 0.5);
+  }
+  58%{
+      background-color: rgba(0, 46, 91, 0.5);
+  }
+  66%{
+      background-color: rgba(0, 0, 90, 0.5);
+  }
+  75%{
+      background-color: rgba(44, 0, 87, 0.5);
+  }
+  83%{
+      background-color: rgba(86, 0, 86, 0.5);
+  }
+  91%{
+      background-color: rgba(79, 0, 40, 0.5);
   }
 }
